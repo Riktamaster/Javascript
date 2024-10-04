@@ -1,0 +1,25 @@
+<!-- WAP to find the square root of a number -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Square Root of a Number</title>
+    </head>
+    <body>
+        <h2>Find Square Root of a Number</h2>
+        <input type="number" id="input_num" placeholder="Enter a number">
+        <button onclick="square_root()">Calculate Square Root</button>
+        <p id="result"></p>
+
+        <script>
+            function square_root(){
+                let num=document.getElementById("input_num").value;
+
+                result=Math.sqrt(num);
+                document.getElementById("result").innerHTML = `Square root of ${num} is: ${result}`;
+            }
+        </script>
+    </body>
+</html>

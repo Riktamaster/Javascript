@@ -1,0 +1,33 @@
+<!-- WAP to print right half pyramid pattern -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Right half pyramid</title>
+    </head>
+    <body>
+        <h2>Right Half Pyramid</h2>
+        <input type="number" id="input_num" placeholder="Enter a number of rows to generate pyramid"><br><br>
+        <button onclick="pyramid()">Show pattern</button>
+        <p id="result"></p>
+
+        <script>
+            function pyramid(){
+                let num=document.getElementById("input_num").value;
+                let result="";
+
+                for(let i=0;i<=num;i++){
+
+                    for(let j=1;j<=i;j++){
+
+                        result+="*";
+                    }
+                    result+="<br> ";  
+                }
+                document.getElementById("result").innerHTML = result;
+            }
+        </script>
+    </body>
+</html>

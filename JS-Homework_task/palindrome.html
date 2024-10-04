@@ -1,0 +1,36 @@
+<!-- WAP to check whether the given string is a palindrome or not -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+</head>
+<body>
+    <h2>Palindrome Checker</h2>
+    <input type="text" id="input_string" placeholder="Enter a string">
+    <button onclick="palindrome()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function palindrome() {
+            let str = document.getElementById("input_string").value; 
+            let reverse_str = ""; 
+
+            // Reverse the string
+            for (let i = str.length - 1; i >= 0; i--) {
+                reverse_str += str[i]; // Concatenate each character in reverse order
+            }
+
+            // Check if the original string is equal to the reversed string
+            if (str === reverse_str) {
+                document.getElementById("result").innerHTML = `${str} is a palindrome.`;
+            } else {
+                document.getElementById("result").innerHTML = `${str} is not a palindrome.`;
+            }
+        }
+    </script>
+</body>
+</html>
+

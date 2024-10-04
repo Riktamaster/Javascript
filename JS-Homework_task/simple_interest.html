@@ -1,0 +1,29 @@
+<!-- WAP to calculate simple interest -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Interest</title>
+    </head>
+    <body>
+        <h2>Simple Interest</h2>
+        <input type="number" id="principal" placeholder="Enter principal amount"><br><br>
+        <input type="number" id="rate" placeholder="Enter interest rate"><br><br>
+        <input type="number" id="time" placeholder="Enter time in years"><br><br>
+        <button onclick="simple_interest()">Calculate Simple Interest</button>
+        <p id="result"></p>
+
+        <script>
+            function simple_interest(){
+                let principal=document.getElementById("principal").value;
+                let rate=document.getElementById("rate").value;
+                let time=document.getElementById("time").value;
+
+                result=(principal*rate*time)/100;
+                document.getElementById("result").innerHTML = `Simple interest is: ${result}`;
+            }
+        </script>
+    </body>
+</html>

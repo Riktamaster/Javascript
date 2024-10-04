@@ -1,0 +1,23 @@
+<!-- WAP to generate random 6 digit number -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random 6-Digit Number Generator</title>
+</head>
+<body>
+    <h2>Random 6-Digit Number Generator</h2>
+    <label>Click the button</label>
+    <button onclick="random_num()">OTP</button>
+    <p id="result"></p>
+
+    <script>
+        function random_num() {
+            let num = Math.floor(Math.random() * 900000) + 100000;
+            document.getElementById("result").innerHTML = `Random 6-Digit Number: ${num}`;
+        }
+    </script>
+</body>
+</html>

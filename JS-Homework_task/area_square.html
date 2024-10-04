@@ -1,0 +1,25 @@
+<!-- WAP to find area of a square -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Area of a Square</title>
+    </head>
+    <body>
+        <h2>Find Area of a Square</h2>
+        <input type="number" id="side" placeholder="Enter value for side">
+        <button onclick="square()">Result</button>
+        <p id="result"></p>
+
+        <script>
+            function square(){
+                let side=document.getElementById("side").value;
+
+                let result=side*side;
+                document.getElementById("result").innerHTML = `Area of the square is: ${result}`;  
+            }
+        </script>
+    </body>
+</html>

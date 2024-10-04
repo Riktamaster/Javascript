@@ -1,0 +1,27 @@
+<!-- WAP to find out even numbers between 1-10 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Numbers</title>
+</head>
+<body>
+    <h2>Find Even Numbers Between 1 and 10</h2>
+    <button onclick="even_nums()">Show Even Numbers</button>
+    <p id="result"></p>
+
+    <script>
+        function even_nums() {
+            let resultText = "Even numbers between 1 and 10 are: ";
+            for (let i = 1; i <= 10; i++) {
+                if (i % 2 == 0) {  
+                    resultText += i + " ";  
+                }
+            }
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>

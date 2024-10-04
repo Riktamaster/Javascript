@@ -1,0 +1,35 @@
+<!-- WAP to generate Fibonacci series upto given terms -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series</title>
+</head>
+<body>
+    <h2>Fibonacci Series</h2>
+    <input type="number" id="input_terms" placeholder="Enter number of terms">
+    <button onclick="fibonacci()">Result</button>
+    <p id="result"></p>
+
+    <script>
+        function fibonacci() {
+            let terms = document.getElementById("input_terms").value;
+            let fibo_series = "";
+
+            let a = 0; // First Fibonacci number
+            let b = 1; // Second Fibonacci number
+
+            for (let i = 0; i < terms; i++) {
+                fibo_series += a + ", "; // Append current Fibonacci number to the series
+                let next = a + b; // Calculate next Fibonacci number
+                a = b; // Update a to the next number
+                b = next; // Update b to the next number
+            }
+
+            document.getElementById("result").innerHTML = `Fibonacci series up to ${terms} terms: ${fibo_series}`;
+        }
+    </script>
+</body>
+</html>

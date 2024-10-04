@@ -1,0 +1,30 @@
+<!-- WAP to find whether given number is odd or even -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Odd or Even Number</title>
+    </head>
+    <body>
+        <h2>Find Odd/Even Number</h2>
+        <input type="number" id="input_num" placeholder="Enter a number">
+        <button onclick="odd_even()">Result</button>
+        <p id="result"></p>
+
+        <script>
+            function odd_even(){
+                let num=document.getElementById("input_num").value;
+
+                if(num%2==0){
+                    result="even";
+                }
+                else{
+                    result="odd";
+                }
+                document.getElementById("result").innerHTML = `This is an ${result} number.`;  
+            }
+        </script>
+    </body>
+</html>
