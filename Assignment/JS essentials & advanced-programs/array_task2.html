@@ -1,0 +1,71 @@
+<!---Write a program to find the sum of all elements in an array of numbers-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Sum of Array Elements</title>
+</head>
+<body>
+
+    <h2>Calculate Sum of Entered Numbers</h2>
+
+    <!-- Input field for the user to enter a number -->
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" required>
+    <br><br>
+
+    <!-- Button to add the number to the array -->
+    <button onclick="addNumber()">Add Number</button>
+
+    <!-- Button to calculate the sum -->
+    <button onclick="calculateSum()">Calculate Sum</button>
+
+    <!-- Section to display the result -->
+    <h3>Numbers Entered:</h3>
+    <p id="numbersList"></p>
+    <h3>Sum:</h3>
+    <p id="result"></p>
+
+    <script>
+        // Array to hold the numbers
+        let numbers = [];
+
+        function addNumber() {
+            // Get the number entered by the user
+            const numberInput = document.getElementById("numberInput").value;
+
+            // Check if the input is valid
+            if (numberInput.trim() === "") {
+                alert("Please enter a valid number.");
+                return;
+            }
+
+            // Add the entered number to the array
+            numbers.push(Number(numberInput));
+
+            // Display the updated list of numbers
+            document.getElementById("numbersList").innerHTML = "Numbers Entered: " + numbers.join(", ");
+
+            // Clear the input field after adding the number
+            document.getElementById("numberInput").value = "";
+        }
+
+        function calculateSum() {
+            // Calculate the sum of array elements
+            let sum = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+            }
+
+            // Display the result
+            document.getElementById("result").innerHTML = "The sum of the entered numbers is: " + sum;
+
+            // Log the result to the console
+            console.log("Sum of entered numbers:", sum);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!--Create a JavaScript object car with properties brand, model, and year. Use JavaScript to: 
+ Access and print the car’s brand and model. 
+ Update the year property. 
+ Add a new property color to the car object-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Car Object Operations</title>
+</head>
+<body>
+
+    <h2>Car Object Operations</h2>
+
+    <!-- Input fields for car properties -->
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" placeholder="Enter car brand"><br><br>
+
+    <label for="model">Model:</label>
+    <input type="text" id="model" placeholder="Enter car model"><br><br>
+
+    <label for="year">Year:</label>
+    <input type="number" id="year" placeholder="Enter car year"><br><br>
+
+    <label for="color">Color:</label>
+    <input type="text" id="color" placeholder="Enter car color"><br><br>
+
+    <button onclick="createCar()">Create Car</button>
+    <button onclick="displayCar()">Display Car</button>
+    <button onclick="updateYear()">Update Year</button>
+    <button onclick="addColor()">Add Color</button>
+
+    <!-- Section to display results -->
+    <h3>Results:</h3>
+    <p id="result"></p>
+
+    <script>
+        // Initialize car object
+        let car = {};
+
+        function createCar() {
+            // Get values from input fields
+            car.brand = document.getElementById("brand").value;
+            car.model = document.getElementById("model").value;
+            car.year = parseInt(document.getElementById("year").value);
+            car.color = ""; // Initialize color as an empty string
+
+            // Display message
+            document.getElementById("result").innerHTML = "Car created! Use the buttons to display or modify it.";
+        }
+
+        function displayCar() {
+            // Display the car's properties
+            let output = `Car Brand: ${car.brand}<br>Car Model: ${car.model}<br>Car Year: ${car.year}<br>Car Color: ${car.color || 'Not set'}`;
+            document.getElementById("result").innerHTML = output;
+        }
+
+        function updateYear() {
+            // Get the new year from input
+            const newYear = parseInt(prompt("Enter the new year:"));
+            if (newYear) {
+                car.year = newYear;
+                document.getElementById("result").innerHTML = `Car year updated to: ${car.year}`;
+            } else {
+                alert("Please enter a valid year.");
+            }
+        }
+
+        function addColor() {
+            // Get the new color from input
+            const newColor = document.getElementById("color").value;
+            if (newColor.trim() !== "") {
+                car.color = newColor;
+                document.getElementById("result").innerHTML = `Car color set to: ${car.color}`;
+            } else {
+                alert("Please enter a valid color.");
+            }
+        }
+    </script>
+
+</body>
+</html>
+

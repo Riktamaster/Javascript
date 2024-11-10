@@ -1,0 +1,46 @@
+<!--Write a JavaScript program to declare variables for different data types 
+(string, number, boolean, null, and undefined)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types in JavaScript</title>
+</head>
+<body>
+
+    <h2>JavaScript Data Types</h2>
+    <p id="stringOutput"></p>
+    <p id="numberOutput"></p>
+    <p id="booleanOutput"></p>
+    <p id="nullOutput"></p>
+    <p id="undefinedOutput"></p>
+
+    <script>
+        // Declare variables
+        let name = "John Doe";          // String
+        let age = 25;                   // Number
+        let isStudent = true;           // Boolean
+        let car = null;                 // Null
+        let address;                    // Undefined
+
+        // Display the value and type in HTML
+        document.getElementById("stringOutput").innerHTML = 
+            "Name: " + name + " (Type: " + typeof name + ")";
+        
+        document.getElementById("numberOutput").innerHTML = 
+            "Age: " + age + " (Type: " + typeof age + ")";
+        
+        document.getElementById("booleanOutput").innerHTML = 
+            "Is Student: " + isStudent + " (Type: " + typeof isStudent + ")";
+        
+        document.getElementById("nullOutput").innerHTML = 
+            "Car: " + car + " (Type: " + typeof car + ")";
+        
+        document.getElementById("undefinedOutput").innerHTML = 
+            "Address: " + address + " (Type: " + typeof address + ")";
+    </script>
+
+</body>
+</html>

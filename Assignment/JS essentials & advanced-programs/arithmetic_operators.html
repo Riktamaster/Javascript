@@ -1,0 +1,61 @@
+<!--Create a JavaScript program to perform the following:
+  Add, subtract, multiply, and divide two numbers using arithmetic operators-->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+</head>
+<body>
+
+    <h2>Arithmetic Operations on Two Numbers</h2>
+
+    <!-- Input fields for numbers -->
+    <label for="num1">Enter first number:</label>
+    <input type="number" id="num1" required>
+    <br><br>
+
+    <label for="num2">Enter second number:</label>
+    <input type="number" id="num2" required>
+    <br><br>
+
+    <!-- Button to trigger calculation -->
+    <button onclick="performArithmetic()">Calculate</button>
+
+    <!-- Section to display results -->
+    <h3>Results:</h3>
+    <p id="additionResult"></p>
+    <p id="subtractionResult"></p>
+    <p id="multiplicationResult"></p>
+    <p id="divisionResult"></p>
+
+    <script>
+        function performArithmetic() {
+            // Get values from input fields
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+
+            // Check if inputs are valid numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers");
+                return;
+            }
+
+            // Perform arithmetic operations
+            let addition = num1 + num2;
+            let subtraction = num1 - num2;
+            let multiplication = num1 * num2;
+            let division = num2 !== 0 ? (num1 / num2) : "Infinity"; // Avoid division by zero
+
+            // Display results in HTML
+            document.getElementById("additionResult").innerHTML = "Addition: " + num1 + " + " + num2 + " = " + addition;
+            document.getElementById("subtractionResult").innerHTML = "Subtraction: " + num1 + " - " + num2 + " = " + subtraction;
+            document.getElementById("multiplicationResult").innerHTML = "Multiplication: " + num1 + " * " + num2 + " = " + multiplication;
+            document.getElementById("divisionResult").innerHTML = "Division: " + num1 + " / " + num2 + " = " + division;
+        }
+    </script>
+
+</body>
+</html>

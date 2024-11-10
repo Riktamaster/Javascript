@@ -1,0 +1,44 @@
+<!--Write a function greetUser that accepts a user’s name as a parameter and displays a
+greeting message (e.g., "Hello, John!").-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greet User</title>
+</head>
+<body>
+
+    <h2>Greet User</h2>
+
+    <!-- Input field for the user's name -->
+    <label for="userName">Enter your name:</label>
+    <input type="text" id="userName" required>
+    <br><br>
+
+    <!-- Button to trigger the greeting -->
+    <button onclick="greetUser()">Greet</button>
+
+    <!-- Section to display the greeting message -->
+    <h3>Message:</h3>
+    <p id="message"></p>
+
+    <script>
+        function greetUser() {
+            // Get the user's name from the input field
+            let name = document.getElementById("userName").value;
+
+            // Check if the name is provided
+            if (name.trim() === "") {
+                document.getElementById("message").innerHTML = "Please enter a valid name.";
+                return;
+            }
+
+            // Display the greeting message
+            document.getElementById("message").innerHTML = "Hello, " + name + "!";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!---Create a JavaScript program using a switch statement to display the day of the week
+based on the user input (e.g., 1 for Monday, 2 for Tuesday, etc.).-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day of the Week</title>
+</head>
+<body>
+
+    <h2>Find the Day of the Week</h2>
+
+    <!-- Input field for the day number -->
+    <label for="dayNumber">Enter a number (1-7):</label>
+    <input type="number" id="dayNumber" min="1" max="7" required>
+    <br><br>
+
+    <!-- Button to trigger the day check -->
+    <button onclick="displayDay()">Get Day</button>
+
+    <!-- Section to display the result -->
+    <h3>Result:</h3>
+    <p id="result"></p>
+
+    <script>
+        function displayDay() {
+            // Get value from input field
+            let dayNumber = parseInt(document.getElementById("dayNumber").value);
+
+            // Use switch statement to determine the day of the week
+            let dayName;
+            switch (dayNumber) {
+                case 1:
+                    dayName = "Monday";
+                    break;
+                case 2:
+                    dayName = "Tuesday";
+                    break;
+                case 3:
+                    dayName = "Wednesday";
+                    break;
+                case 4:
+                    dayName = "Thursday";
+                    break;
+                case 5:
+                    dayName = "Friday";
+                    break;
+                case 6:
+                    dayName = "Saturday";
+                    break;
+                case 7:
+                    dayName = "Sunday";
+                    break;
+                default:
+                    dayName = "Invalid input. Please enter a number between 1 and 7.";
+            }
+
+            // Display result in HTML
+            document.getElementById("result").innerHTML = dayName;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!--Create a JavaScript program to perform the following:
+Use logical operators to check if both conditions (e.g., a > 10 and b < 5) are
+true.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Operators</title>
+</head>
+<body>
+
+    <h2>Check Two Conditions</h2>
+
+    <!-- Input fields for numbers -->
+    <label for="a">Enter a number for 'a':</label>
+    <input type="number" id="a" required>
+    <br><br>
+
+    <label for="b">Enter a number for 'b':</label>
+    <input type="number" id="b" required>
+    <br><br>
+
+    <!-- Button to trigger condition check -->
+    <button onclick="checkConditions()">Check Conditions</button>
+
+    <!-- Section to display results -->
+    <h3>Result:</h3>
+    <p id="result"></p>
+
+    <script>
+        function checkConditions() {
+            // Get values from input fields
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+
+            // Check if inputs are valid numbers
+            if (isNaN(a) || isNaN(b)) {
+                alert("Please enter valid numbers");
+                return;
+            }
+
+            // Use logical operators to check both conditions
+            let bothConditions = (a > 10 && b < 5);
+
+            // Display result in HTML
+            if (bothConditions) {
+                document.getElementById("result").innerHTML = "Both conditions are true: a > 10 and b < 5.";
+            } else {
+                document.getElementById("result").innerHTML = "Both conditions are not true.";
+            }
+        }
+    </script>
+
+</body>
+</html>

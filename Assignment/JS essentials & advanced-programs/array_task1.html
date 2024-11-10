@@ -1,0 +1,62 @@
+<!--Declare an array of fruits (["apple", "banana", "cherry"]). Use JavaScript to: 
+ Add a fruit to the end of the array. 
+ Remove the first fruit from the array.
+ Log the modified array to the console.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Fruit Array</title>
+</head>
+<body>
+
+    <h2>Fruit Array Operations</h2>
+
+    <!-- Input field for the user to add a fruit -->
+    <label for="newFruit">Enter a fruit to add:</label>
+    <input type="text" id="newFruit" required>
+    <br><br>
+
+    <!-- Button to trigger the array operations -->
+    <button onclick="modifyFruits()">Modify Array</button>
+
+    <!-- Section to display the modified array -->
+    <h3>Modified Array:</h3>
+    <p id="result"></p>
+
+    <script>
+        // Initial array of fruits
+        let fruits = ["apple", "banana", "cherry"];
+
+        function modifyFruits() {
+            // Get the fruit name entered by the user
+            const newFruit = document.getElementById("newFruit").value.trim();
+
+            // Check if the input is not empty
+            if (newFruit === "") {
+                alert("Please enter a fruit name.");
+                return;
+            }
+
+            // Add the user input as a new fruit at the end of the array
+            fruits.push(newFruit);
+
+            // Remove the first fruit from the array
+            fruits.shift();
+
+            // Log the modified array to the console
+            console.log("Modified array:", fruits);
+
+            // Display the modified array in the HTML
+            document.getElementById("result").innerHTML = "Modified Array: " + fruits.join(", ");
+
+            // Clear the input field after adding the fruit
+            document.getElementById("newFruit").value = "";
+        }
+    </script>
+
+</body>
+</html>
+
